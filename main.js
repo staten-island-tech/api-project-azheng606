@@ -17,7 +17,6 @@ console.log (result);
 
 const URL = `https://api.disneyapi.dev/character`;
 /* const URLP = `pokemon/${search}` */
-
 async function getData(URL){
    //try is what happens if you get the data
     try {
@@ -25,7 +24,7 @@ async function getData(URL){
         //await is the promise telling them to wait first while finding the source before saying no
         const response = await fetch(URL);
         if (response.status != 200){
-            throw new Error(response.statusText);
+            throw new Error(response);
         }
         //convert response to json
         const data = await response.json();
