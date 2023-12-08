@@ -1,4 +1,6 @@
 import '../style/style.css'
+import { DOMSelectors } from './dom';
+console.log (DOMSelectors)
 /* function greet (name) {
 const greetPromise =  new Promise(function (resolve, reject){
     resolve(`Hello ${name}`);
@@ -24,12 +26,18 @@ async function getData(URL){
             throw new Error(response.statusText);
         }
         const all = await response.json();
-        document.querySelector(".gallery").textContent = all.name;
-        console.log (all.data.name);
-        console.log (all);
+        document.querySelector(".gallery").textContent = all.films;
+        console.log (all.films);
+        all.films.forEach((films)=> {DOMSelectors.gallery.insertAdjacentHTML("beforeend",  `
+        <div class="card">
+        <div class ="name"> ${films.name}</div>
+        <img src= ${films.imageURL} class="card-img">
+        </div>`)});
     } catch (error) {
         console.log(error, "UH OH");
-        document.querySelector(".gallery").textContent = "No thing founddddd"
-        
-    }
+        document.querySelector(".gallery").textContent = "No thing founddddd"   
+        };/* 
+        data.results.forEach ((name)=> (console.log(name)); */
 } getData(URL)
+
+//when user clicks sometihing, new data appears
