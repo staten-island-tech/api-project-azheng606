@@ -14,11 +14,8 @@ console.log (result);
 });
 //get the data and then handle the data */
 
-
 const URL = "https://api.disneyapi.dev/character";
-console.log (URL.name)
 
-/* 
 
 async function getData(URL) {
     try {
@@ -26,11 +23,16 @@ async function getData(URL) {
         if (response.status != 200){
             throw new Error(response.statusText);
         }
-        const data = await response.json ();
-        document.getElementById("api-response").textContent = data.name; 
-    } catch (error) {
-        console.log(error, "ooooo");
-        document.getElementById("api-response").textContent= "noone"
-    }
-}
-getData (URL); */
+        const all = await response.json ();
+        document.querySelector(".gallery").textContent = all.data;
+        console.log (all)
+all.films.forEach((data)=> {DOMSelectors.gallery.insertAdjacentHTML("beforeend",  `
+<div class="card">
+<div class ="name"> ${data.name}</div>
+<img src= ${data.imageURL} class="card-img">
+</div>`)});
+} catch (error) {
+console.log(error, "UH OH");
+document.querySelector(".gallery").textContent = "No thing founddddd"   
+};
+} getData(URL)
