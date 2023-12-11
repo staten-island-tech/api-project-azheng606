@@ -26,13 +26,17 @@ async function getData(URL) {
         const all = await response.json ();
         document.querySelector(".gallery").textContent = all.data;
         console.log (all)
-all.films.forEach((data)=> {DOMSelectors.gallery.insertAdjacentHTML("beforeend",  `
-<div class="card">
-<div class ="name"> ${data.name}</div>
-<img src= ${data.imageURL} class="card-img">
-</div>`)});
+        yes (data) 
 } catch (error) {
 console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd"   
 };
 } getData(URL)
+
+function yes (arr){
+    arr.forEach((el)=> {DOMSelectors.box.insertAdjacentHTML("beforeend",  `
+    <div class="card">
+    <div class ="name"> ${el.name}</div>
+    <img src= ${el.imageURL} class="card-img">
+    </div>`)})};
+    
