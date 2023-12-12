@@ -26,7 +26,8 @@ async function getData(URL) {
         const all = await response.json ();
         document.querySelector(".gallery").textContent = all.data;
         console.log (all)
-        yes (data) 
+        yes (data)
+         
 } catch (error) {
 console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd"   
