@@ -1,4 +1,5 @@
 import '../style/style.css'
+import { DOMSelectors } from './dom';
 /* function greet (name) {
 const greetPromise =  new Promise(function (resolve, reject){
     resolve(`Hello ${name}`);
@@ -13,11 +14,10 @@ mandy.then((result)=> {
 console.log (result);
 });
 //get the data and then handle the data */
-
 const URL = "https://api.disneyapi.dev/character";
 
 
-async function getData(URL) {
+async function getData() {
     try {
         const response = await fetch(URL);
         if (response.status != 200){
@@ -26,18 +26,14 @@ async function getData(URL) {
         const all = await response.json ();
         document.querySelector(".gallery").textContent = all.data;
         console.log (all)
-        yes (data)
-         
-} catch (error) {
+        const lolz = all.data.filter((data)=> data.films)
+        lolz.forEach(el=> {DOMSelectors.box.insertAdjacentHTML("beforeend",  `
+        <div class="card">
+        <div class ="name"> ${el.name}</div>
+        <img src= ${el.imageUrl} class="card-img">
+        </div>`)}) 
+      } catch (error) {
 console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd"   
 };
 } getData(URL)
-
-function yes (arr){
-    arr.forEach((el)=> {DOMSelectors.box.insertAdjacentHTML("beforeend",  `
-    <div class="card">
-    <div class ="name"> ${el.name}</div>
-    <img src= ${el.imageURL} class="card-img">
-    </div>`)})};
-    
