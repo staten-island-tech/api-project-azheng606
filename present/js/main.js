@@ -37,3 +37,18 @@ console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd"   
 };
 } getData(URL)
+
+
+
+
+
+
+const height = Number (prompt("enter your height in centimeters"));
+/* 
+
+
+<label for="site-search">Search the site:</label>
+<input type="search" id="site-search" name="q" />
+
+<button>Search</button>
+ */
