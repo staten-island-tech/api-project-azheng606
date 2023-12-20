@@ -14,64 +14,83 @@ mandy.then((result)=> {
 console.log (result);
 });
 //get the data and then handle the data */
-const URL = "https://api.disneyapi.dev/character";
+/* const URL = "https://api.disneyapi.dev/character"; */
 
 
-async function getData() {
+/* async function getData() {
     try {
         const response = await fetch(URL);
         if (response.status != 200){
             throw new Error(response.statusText);
         }
         const all = await response.json ();
-        document.querySelector(".gallery").textContent = all.data;
-        console.log (all)
-        const lolz = all.data.filter((data)=> data.films.length ===2 )
-        lolz.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
+        all.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
         <div class="card">
         <div class ="name"> ${el.name}</div>
         <img src= ${el.imageUrl} class="card-img">
         </div>`)})     
-      } catch (error) {
+      } 
+catch (error) {
 console.log(error, "UH OH");
-document.querySelector(".gallery").textContent = "No thing founddddd"   
-};
-} getData(URL) 
-
-
-DOMSelectors.form.addEventListener("submit" ,function (event) {
-    let hello = DOMSelectors.first.value 
-    let bye = DOMSelectors.last.value 
-    const pop = `https://api.disneyapi.dev/character?name=${hello}%20${bye}`
- })
-
-
-/*
-<label for="site-search">Search the site:</label>
-<input type="search" id="site-search" name="q" />
-
-<button>Search</button>
+document.querySelector(".gallery").textContent = "No thing founddddd";   
+}
+} getData(URL)  
  */
 
+function clearfields () {
+    DOMSelectors.gallery.innerHTML= "";}
 
-/* 
+DOMSelectors.form.addEventListener("submit" ,function (event) {
+event.preventdefault ();
+clearfields();
+    let hello = DOMSelectors.first.value 
+    let bye = DOMSelectors.last.value 
+    const pop = `https://api.disneyapi.dev/character?name=${hello}%20${bye}`;
+    const boop = `https://api.disneyapi.dev/character?name=${hello}`;
+if (bye = "") {
+    async function getData () {
+        try {
+            const response = await fetch (boop);
+            if (response.status != 200){
+                throw new Error(response.statusText);
+            }
+            const all = await response.json ();
+            document.querySelector (".gallery").textContent = all.data
+            console.log (all)
+            all.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
+            <div class="card">
+            <div class ="name"> ${el.name}</div>
+            <img src= ${el.imageUrl} class="card-img">
+            </div>`)})     
+          } 
+    catch (error) {
+    console.log(error, "UH OH");
+    document.querySelector(".gallery").textContent = "No thing founddddd";   
+    }
+    }
+ }
+ else {
+    async function getData () {
+        try {
+            const response = await fetch (pop);
+            if (response.status != 200){
+                throw new Error(response.statusText);
+            }
+            const all = await response.json ();
+            document.querySelector (".gallery").textContent = all.data
+            console.log (all)
+            all.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
+            <div class="card">
+            <div class ="name"> ${el.name}</div>
+            <img src= ${el.imageUrl} class="card-img">
+            </div>`)})     
+          } 
+    catch (error) {
+    console.log(error, "UH OH");
+    document.querySelector(".gallery").textContent = "No thing founddddd";   
+    }
+    } 
+ }
+ getData(boop) 
+ getData(pop) 
 
-async function getData() {
-    try {
-        const response = await fetch(URL);
-        if (response.status != 200){
-            throw new Error(response.statusText);
-        }
-        const all = await response.json ();
-        document.querySelector(".gallery").textContent = all.data;
-        console.log (all)
-        const lolz = all.data.filter((data)=> data.films)
-        lolz.forEach(el=> {DOMSelectors.box.insertAdjacentHTML("beforeend",  `
-        <div class="card">
-        <div class ="name"> ${el.name}</div>
-        <img src= ${el.imageUrl} class="card-img">
-        </div>`)}) 
-      } catch (error) {
-console.log(error, "UH OH");
-document.querySelector(".gallery").textContent = "No thing founddddd"   
-}; */
