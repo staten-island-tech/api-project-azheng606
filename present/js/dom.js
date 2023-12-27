@@ -6,4 +6,5 @@ const DOMSelectors = {
     start:document.querySelector(".start"),
     first:document.querySelector(".first"),
     last:document.querySelector(".last"),
+    form: document.querySelector("#form"),
 }

@@ -16,8 +16,8 @@ console.log (result);
 //get the data and then handle the data */
 /* const URL = "https://api.disneyapi.dev/character"; */
 
-
-/* async function getData() {
+/* 
+async function getData() {
     try {
         const response = await fetch(URL);
         if (response.status != 200){
@@ -34,29 +34,53 @@ catch (error) {
 console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd";   
 }
-} getData(URL)  
- */
+} getData(URL)   */
+
 
 function clearfields () {
-    DOMSelectors.gallery.innerHTML= "";}
+DOMSelectors.gallery.innerHTML= "";
+}
 
 DOMSelectors.form.addEventListener("submit" ,function (event) {
 event.preventdefault ();
 clearfields();
     let hello = DOMSelectors.first.value 
-    let bye = DOMSelectors.last.value 
-    const pop = `https://api.disneyapi.dev/character?name=${hello}%20${bye}`;
-    const boop = `https://api.disneyapi.dev/character?name=${hello}`;
-if (bye = "") {
-    async function getData () {
+    const URL = `https://api.disneyapi.dev/character?name=${hello}`;
+
+    async function getData(URL) {
+        try {
+            const response = await fetch(URL);
+            if (response.status != 200){
+            throw new Error(response.statusText);
+            }
+            const all = await response.json ();
+            document.querySelector(".gallery").textContent=all.data;
+            console.log (all)
+            proud(all)   
+          } 
+    catch (error) {
+    console.log(error, "UH OH");
+    document.querySelector(".gallery").textContent = "No thing founddddd";   
+    }
+    }
+    getData(URL)  })
+    
+
+function proud (arr) {
+    arr.forEach((all)=>{DOMSelectors.start.insertAdjacentHTML("beforeend",  `
+    <div class="card">
+    <div class ="name"> ${all.name}</div>
+    <img src= ${all.imageUrl} class="card-img">
+    </div>`)} )
+}
+
+    /* async function getData () {
         try {
             const response = await fetch (boop);
             if (response.status != 200){
-                throw new Error(response.statusText);
+            throw new Error (response.statusText);
             }
             const all = await response.json ();
-            document.querySelector (".gallery").textContent = all.data
-            console.log (all)
             all.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
             <div class="card">
             <div class ="name"> ${el.name}</div>
@@ -68,29 +92,6 @@ if (bye = "") {
     document.querySelector(".gallery").textContent = "No thing founddddd";   
     }
     }
- }
- else {
-    async function getData () {
-        try {
-            const response = await fetch (pop);
-            if (response.status != 200){
-                throw new Error(response.statusText);
-            }
-            const all = await response.json ();
-            document.querySelector (".gallery").textContent = all.data
-            console.log (all)
-            all.forEach(el=> {DOMSelectors.start.insertAdjacentHTML("beforeend",  `
-            <div class="card">
-            <div class ="name"> ${el.name}</div>
-            <img src= ${el.imageUrl} class="card-img">
-            </div>`)})     
-          } 
-    catch (error) {
-    console.log(error, "UH OH");
-    document.querySelector(".gallery").textContent = "No thing founddddd";   
-    }
-    } 
- }
+ })
  getData(boop) 
- getData(pop) 
-
+ */
