@@ -33,14 +33,6 @@ h1 {
 
 }
 
-.box {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center; 
-}
-
 .name {
     font-size: var(--h2);
     margin-top: 20px ;
@@ -65,14 +57,53 @@ h1 {
 
 }
 
-.card {
-    background-color: var(--secondary);
-    align-items: center;
+.container {
     margin: 12px 1px;
     border-radius: 3%;
     width: 25rem;
-    height: 25rem;
+    height: 30rem;
+    position: relative;
+}
 
+.card { 
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    position: absolute;
+}
+
+.front { 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--secondary);
+    position: absolute;
+}
+
+.shortfilms {
+    margin: var(--space);
+    background-color: var(--secondary);
+}
+.films {
+    background-color: var(--secondary);
+}
+.tvshows {
+    background-color: var(--secondary);
+}
+.videogames {
+    background-color: var(--secondary);
+}
+
+.back { 
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--secondary);
+transform: rotateY(180deg);
+position: absolute;
 }
 
 :root {
@@ -83,16 +114,16 @@ h1 {
     --h1: 3.375rem;
     --h2: 2.25rem;
     --h3: 1.5rem;
+    --space: 10px, 0px;
+
 
     --primary: var(--light);
     --secondary:var(--beige);
 }
 
-.card:hover{
-    transform: scale(1.03) rotate(1.2deg) translate(15px,8px);
-    transition: 0.7s;
- 
-} 
+.card:hover {
+    transform: rotateY(180deg);
+}
 
 
 

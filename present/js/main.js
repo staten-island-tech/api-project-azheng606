@@ -49,13 +49,22 @@ function clearfields () {
 
     function proud (arr) {
         arr.data.forEach((all)=>{DOMSelectors.box.insertAdjacentHTML("beforeend",  `
+        <div class="container">
         <div class="card">
+        <div class="front">
         <div class ="name"> ${all.name}</div>
         <img src= ${all.imageUrl} class="card-img">
-        </div>`)} )
+        </div>
+        <div class="back">
+        <div class ="shortfilms">  ${"Short Films:"+ all.shortFilms} </div>
+       <div class="films">  ${"Films:" +all.films} </div>
+       <div class="tvshows"> ${"TV Shows:" + all.tvShows}</div>
+       <div class="videogames">  ${"Video Games:" + all.videoGames}</div>
+       </div>
+        </div></div>`)} )
     }
 
-
+/* 
     DOMSelectors.box.addEventListener("mouseover", function everything () { 
         card.forEach ((all)=> DOMSelectors.box.insertAdjacentHTML("beforeend", `
         <div class="drac">
@@ -64,5 +73,5 @@ function clearfields () {
        <h3 class="tvshows"> ${all.tvShows}</h3>
        <h3 class="videogames"> ${all.videoGames}</h3>
         </div>`));
-    })
+    }) */
 
