@@ -7,4 +7,6 @@ const DOMSelectors = {
     first:document.querySelector(".first"),
     last:document.querySelector(".last"),
     form: document.querySelector("#form"),
+    start:document.querySelector("#start"),
+    iphone:document.querySelector("#iphone"),
 }
