@@ -83,20 +83,6 @@ h1 {
     position: absolute;
 }
 
-.shortfilms {
-    margin: var(--space);
-    background-color: var(--secondary);
-}
-.films {
-    background-color: var(--secondary);
-}
-.tvshows {
-    background-color: var(--secondary);
-}
-.videogames {
-    background-color: var(--secondary);
-}
-
 .back { 
     width: 100%;
     height: 100%;
@@ -104,6 +90,24 @@ h1 {
     background-color: var(--secondary);
 transform: rotateY(180deg);
 position: absolute;
+}
+
+.shortfilms {
+    margin: var(--space);
+    background-color: var(--secondary);
+}
+.films {
+    margin: var(--space);
+    background-color: var(--secondary);
+}
+.tvshows {
+    margin: var(--space);
+    background-color: var(--secondary);
+}
+.videogames {
+    margin: var(--space);
+    background-color: var(--secondary);
+
 }
 
 :root {
@@ -114,7 +118,8 @@ position: absolute;
     --h1: 3.375rem;
     --h2: 2.25rem;
     --h3: 1.5rem;
-    --space: 10px, 0px;
+    --space: 10px 0px;
+    
 
 
     --primary: var(--light);

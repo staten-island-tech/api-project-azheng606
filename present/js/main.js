@@ -56,10 +56,10 @@ function clearfields () {
         <img src= ${all.imageUrl} class="card-img">
         </div>
         <div class="back">
-        <div class ="shortfilms">  ${"Short Films:"+ all.shortFilms} </div>
-       <div class="films">  ${"Films:" +all.films} </div>
-       <div class="tvshows"> ${"TV Shows:" + all.tvShows}</div>
-       <div class="videogames">  ${"Video Games:" + all.videoGames}</div>
+        <div class ="shortfilms">  ${"Short Films: "+ all.shortFilms} </div>
+       <div class="films">  ${"Films: " +all.films} </div>
+       <div class="tvshows"> ${"TV Shows: " + all.tvShows}</div>
+       <div class="videogames">  ${"Video Games: " + all.videoGames}</div>
        </div>
         </div></div>`)} )
     }
