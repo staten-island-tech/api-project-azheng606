@@ -36,15 +36,15 @@ document.querySelector(".gallery").textContent = "No thing founddddd";
               } 
         catch (error) {
         console.log(error, "UH OH");
-        document.querySelector("h2").textContent = "No thing founddddd";   
+        DOMSelectors.awman.textContent = "Oopsies nothing fouund ;)";   
         }
         } 
         getData(kop) 
-
     })
 
 function clearfields () {
     DOMSelectors.box.innerHTML= "";
+    DOMSelectors.awman.innerHTML="";
     } 
 
     function proud (arr) {
@@ -64,14 +64,5 @@ function clearfields () {
         </div></div>`)} )
     }
 
-/* 
-    DOMSelectors.box.addEventListener("mouseover", function everything () { 
-        card.forEach ((all)=> DOMSelectors.box.insertAdjacentHTML("beforeend", `
-        <div class="drac">
-        <div class ="shortfilms"> ${all.shortFilms}</div>
-       <h3 class="films"> ${all.films}</h3>
-       <h3 class="tvshows"> ${all.tvShows}</h3>
-       <h3 class="videogames"> ${all.videoGames}</h3>
-        </div>`));
-    }) */
+
 
