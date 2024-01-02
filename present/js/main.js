@@ -1,9 +1,9 @@
 import '../style/style.css'
 import { DOMSelectors } from './dom';
 
-/* 
-const URL = "https://api.disneyapi.dev/character?name=cinderella"; 
-async function getData(URL) {
+
+const URL = "https://api.disneyapi.dev/character"; 
+/* async function getData(URL) {
     try {
         const response = await fetch(URL);
         if (response.status != 200){
@@ -16,8 +16,40 @@ catch (error) {
 console.log(error, "UH OH");
 document.querySelector(".gallery").textContent = "No thing founddddd";   
 }
-} getData(URL)   */
- 
+} getData(URL)  */ 
+async function getData() {
+    try {
+        const response = await fetch(URL);
+        if (response.status != 200){
+            throw new Error(response.statusText);
+        }
+        const all = await response.json ();
+        all.forEach((el)=> { DOMSelectors.box.insertAdjacentHTML("beforeend", `
+        <div class="container">
+        <div class="card">
+        <div class="front">
+        <div class ="name"> ${el.name}</div>
+        <img src= ${el.imageUrl} class="card-img">
+        </div>
+        <div class="back">
+        <div class ="shortfilms">  ${"Short Films: "+ el.shortFilms} </div>
+       <div class="films">  ${"Films: " +el.films} </div>
+       <div class="tvshows"> ${"TV Shows: " + el.tvShows}</div>
+       <div class="videogames">  ${"Video Games: " + el.videoGames}</div>
+       </div>
+        </div></div>`)})
+        
+        
+      } 
+catch (error) {
+console.log(error, "UH OH");
+DOMSelectors.awman.textContent = "Oopsies nothing fouund ;)";   
+};
+} 
+getData(URL)
+
+
+
    DOMSelectors.iphone.addEventListener("click" ,function (event) { 
     event.preventDefault(); 
         clearfields(); 
@@ -62,7 +94,4 @@ function clearfields () {
        <div class="videogames">  ${"Video Games: " + all.videoGames}</div>
        </div>
         </div></div>`)} )
-    }
-
-
-
+    }   
