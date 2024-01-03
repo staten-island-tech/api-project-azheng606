@@ -2,7 +2,7 @@ import '../style/style.css'
 import { DOMSelectors } from './dom';
 
 
-const URL = "https://api.disneyapi.dev/character"; 
+const URL = "https://api.disneyapi.dev/character";  
 /* async function getData(URL) {
     try {
         const response = await fetch(URL);
@@ -24,7 +24,9 @@ async function getData() {
             throw new Error(response.statusText);
         }
         const all = await response.json ();
-        all.forEach((el)=> { DOMSelectors.box.insertAdjacentHTML("beforeend", `
+        console.log (all);
+        const lolz = all.data.filter((data)=>data.id =337)
+        lolz.forEach((el)=> { DOMSelectors.box.insertAdjacentHTML("beforeend", `
         <div class="container">
         <div class="card">
         <div class="front">
@@ -48,7 +50,7 @@ DOMSelectors.awman.textContent = "Oopsies nothing fouund ;)";
 } 
 getData(URL)
 
-
+ 
 
    DOMSelectors.iphone.addEventListener("click" ,function (event) { 
     event.preventDefault(); 
@@ -95,3 +97,4 @@ function clearfields () {
        </div>
         </div></div>`)} )
     }   
+
