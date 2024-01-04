@@ -95,18 +95,22 @@ position: absolute;
 .shortfilms {
     margin: var(--space);
     background-color: var(--secondary);
+    color: var(--primary);
 }
 .films {
     margin: var(--space);
     background-color: var(--secondary);
+    color: var(--primary);
 }
 .tvshows {
     margin: var(--space);
     background-color: var(--secondary);
+    color: var(--primary);
 }
 .videogames {
     margin: var(--space);
     background-color: var(--secondary);
+    color: var(--primary);
 
 }
 
@@ -114,7 +118,7 @@ position: absolute;
     --black: #000000;
     --light: #CBC3E3;
     --dark: #8f5599;
-    --beige: #F5F5DC;
+    --beige: #2b1554;
     --h1: 3.375rem;
     --h2: 2.25rem;
     --h3: 1.5rem;
@@ -134,12 +138,12 @@ position: absolute;
 
 @media screen and (max-width:1200px){
     .card {
-        width: 28%;
+        width: 50%;
     }
  }
 @media screen and (max-width:1000px){
     .card {
-        width: 43%;
+        width: 45%;
     }
  }
  @media screen and (max-width:500px){
