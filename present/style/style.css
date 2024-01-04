@@ -21,17 +21,7 @@ h1 {
     justify-content: space-around;
     align-content: center; }
 
-    
-.good {
-   --primary: var(--light);
-   --secondary:var(--beige);
-   
-}
-.bad{
-  --primary: var(--dark);
-  --secondary: var(--black);
 
-}
 
 .name {
     font-size: var(--h2);
@@ -117,8 +107,7 @@ position: absolute;
 :root {
     --black: #000000;
     --light: #CBC3E3;
-    --dark: #8f5599;
-    --beige: #2b1554;
+    --dark: #2b1554;
     --h1: 3.375rem;
     --h2: 2.25rem;
     --h3: 1.5rem;
@@ -127,23 +116,22 @@ position: absolute;
 
 
     --primary: var(--light);
-    --secondary:var(--beige);
+    --secondary:var(--dark);
 }
 
 .card:hover {
     transform: rotateY(180deg);
 }
 
-
-
+  
 @media screen and (max-width:1200px){
     .card {
-        width: 50%;
+        width: 28%;
     }
  }
 @media screen and (max-width:1000px){
     .card {
-        width: 45%;
+        width: 43%;
     }
  }
  @media screen and (max-width:500px){
