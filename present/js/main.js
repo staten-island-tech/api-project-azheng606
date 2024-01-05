@@ -31,7 +31,8 @@ async function getData() {
         <div class="card">
         <div class="front">
         <div class ="name"> ${el.name}</div>
-        <img src= ${el.imageUrl} class="card-img">
+        <img src= ${el.imageUrl} class="card-img" alt=${el.name}>
+        <div class ="web"> ${el.sourceUrl}</div>
         </div>
         <div class="back">
         <div class ="shortfilms">  ${"Short Films: "+ el.shortFilms} </div>
@@ -86,8 +87,10 @@ function clearfields () {
         <div class="container">
         <div class="card">
         <div class="front">
-        <div class ="name"> ${all.name}</div>
+        <div class ="name"> ${all.name} </div>
         <img src= ${all.imageUrl} class="card-img">
+        <div class ="web"> ${all.sourceUrl} </div>
+
         </div>
         <div class="back">
         <div class ="shortfilms">  ${"Short Films: "+ all.shortFilms} </div>

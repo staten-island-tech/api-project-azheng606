@@ -32,6 +32,12 @@ h1 {
 
 }
 
+.web {
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: var(--h4);
+    text-align: center;
+    margin-top: 5px; }
 .card-img {
    
     margin-left: 8%;
@@ -113,6 +119,7 @@ position: absolute;
     --h1: 3.375rem;
     --h2: 2.25rem;
     --h3: 1.5rem;
+    --h4: 0.8rem;
     --space: 10px 0px;
     
 
